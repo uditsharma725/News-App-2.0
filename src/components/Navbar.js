@@ -29,7 +29,8 @@ export default function Navbar(props) {
                     <div className={`flex items-center text-center my-3 lg:ml-11
                     ease-in-out duration-500 md:hover:scale-110 cursor-pointer`}>
 
-                        <img src='logo.svg' alt='.' className='w-10 h-7 mr-1.5' />
+                        <img src={`${mode === 'moon'? 'monkey.png':'favicon-32x32.png'}`} 
+                        alt='.' className='w-9 h-9 mr-1.5' />
                         <Link to='/' className={`text-${mode === 'moon' ? 'black' : 'white'} 
                         ease-in-out duration-200`}>
                             NEWS | MONKEY
@@ -80,7 +81,7 @@ export default function Navbar(props) {
                             ${location.pathname === '/tech' ? `scale-110
                             text-${mode === 'moon' ? 'black' : 'white'}` : ''}`}
                                 onClick={openNav}>
-                                <Link to="/tech">Tech/Gaming</Link>
+                                <Link to="/tech">Technology</Link>
                             </li>
 
                             <i className={`fa-solid fa-${mode} px-2 text-lg cursor-pointer 
