@@ -61,14 +61,6 @@ export default function Navbar(props) {
 
                             <li className={`hover:text-${mode === 'moon' ? 'black' : 'white'} 
                             ease-in-out duration-300 my-4 mx-5 hover:scale-110 flex justify-center
-                            ${location.pathname === '/health' ? `scale-110
-                            text-${mode === 'moon' ? 'black' : 'white'}` : ''}`}
-                                onClick={openNav}>
-                                <Link to="/health">Health</Link>
-                            </li>
-
-                            <li className={`hover:text-${mode === 'moon' ? 'black' : 'white'} 
-                            ease-in-out duration-300 my-4 mx-5 hover:scale-110 flex justify-center
                             ${location.pathname === '/science' ? `scale-110
                             text-${mode === 'moon' ? 'black' : 'white'}` : ''}`}
                                 onClick={openNav}>
@@ -88,15 +80,7 @@ export default function Navbar(props) {
                             ${location.pathname === '/tech' ? `scale-110
                             text-${mode === 'moon' ? 'black' : 'white'}` : ''}`}
                                 onClick={openNav}>
-                                <Link to="/tech">Tech</Link>
-                            </li>
-
-                            <li className={`hover:text-${mode === 'moon' ? 'black' : 'white'} 
-                            ease-in-out duration-300 my-4 mx-5 hover:scale-110 flex justify-center
-                            ${location.pathname === '/ent' ? `scale-125
-                            text-${mode === 'moon' ? 'black' : 'white'}` : ''}`}
-                                onClick={openNav}>
-                                <Link to="/ent">Ent</Link>
+                                <Link to="/tech">Tech/Gaming</Link>
                             </li>
 
                             <i className={`fa-solid fa-${mode} px-2 text-lg cursor-pointer 
