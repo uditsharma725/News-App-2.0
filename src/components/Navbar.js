@@ -30,7 +30,7 @@ export default function Navbar(props) {
                     ease-in-out duration-500 md:hover:scale-110 cursor-pointer`}>
 
                         <Link to='/' className={`text-${mode === 'moon' ? 'black' : 'white'} 
-                        ease-in-out duration-200`}>
+                        ease-in-out duration-200`} onClick={openNav}>
                             NEWS | Monkey
                         </Link>
 
