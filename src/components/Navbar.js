@@ -29,11 +29,9 @@ export default function Navbar(props) {
                     <div className={`flex items-center text-center my-3 lg:ml-11
                     ease-in-out duration-500 md:hover:scale-110 cursor-pointer`}>
 
-                        <img src={`${mode === 'moon'? 'monkey.png':'favicon-32x32.png'}`} 
-                        alt='.' className='w-9 h-9 mr-1.5' />
                         <Link to='/' className={`text-${mode === 'moon' ? 'black' : 'white'} 
                         ease-in-out duration-200`}>
-                            NEWS | MONKEY
+                            NEWS | Monkey
                         </Link>
 
                     </div>
@@ -66,6 +64,14 @@ export default function Navbar(props) {
                             text-${mode === 'moon' ? 'black' : 'white'}` : ''}`}
                                 onClick={openNav}>
                                 <Link to="/science">Science</Link>
+                            </li>
+
+                            <li className={`hover:text-${mode === 'moon' ? 'black' : 'white'} 
+                            ease-in-out duration-300 my-4 mx-5 hover:scale-110 flex justify-center
+                            ${location.pathname === '/entertainment' ? `scale-110
+                            text-${mode === 'moon' ? 'black' : 'white'}` : ''}`}
+                                onClick={openNav}>
+                                <Link to="/entertainment">Entertainment</Link>
                             </li>
 
                             <li className={`hover:text-${mode === 'moon' ? 'black' : 'white'} 

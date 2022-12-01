@@ -5,7 +5,7 @@ import {
   Routes,
   Route
 } from "react-router-dom";
-import Test from "./components/Test";
+import NewsItem from "./components/NewsItem";
 
 function App() {
 
@@ -26,7 +26,7 @@ function App() {
       <Router>
         <Navbar darkMode={darkMode} mode={mode} />
         <Routes>
-          <Route exact path='/' element={<Test />} />
+          <Route exact path='/' element={<NewsItem mode={mode}/>} />
         </Routes>
       </Router>
     </>
