@@ -9,7 +9,7 @@ export default function Spinner(props) {
     else color = '#fff';
 
     return (
-        <div className='flex justify-center mt-11 mb-11'>
+        <div className='flex justify-center mt-24 mb-11'>
             <ClipLoader
                 color={color}
                 loading={true}

@@ -7,6 +7,7 @@ export default function News(props) {
 
     const { mode, category } = props;
 
+    const [loading, setLoading] = useState(false);
     const [page, setPage] = useState(1);
     const [articles, setArticles] = useState([]);
     const [results, setResults] = useState(0);
@@ -16,10 +17,12 @@ export default function News(props) {
 
 
     const fetchData = async () => {
+        setLoading(true);
         const response = await fetch(url);
         const json = await response.json();
         setArticles(json.articles);
         setResults(json.totalResults);
+        setLoading(false);
     }
 
     useEffect(() => {
@@ -38,21 +41,24 @@ export default function News(props) {
     }
 
     return (
-        <div>
-            <InfiniteScroll
-                dataLength={articles.length}
-                next={fetchMoreData}
-                hasMore={articles.length < results}
-                loader={<Spinner mode={mode}/>}
-            >
+        <>
+            {loading && <Spinner mode={mode}/>}
+            {!loading && <div>
+                <InfiniteScroll
+                    dataLength={articles.length}
+                    next={fetchMoreData}
+                    hasMore={articles.length < results}
+                    loader={<Spinner mode={mode} />}
+                >
 
-                <div className="mt-24 md:ml-11 md:mr-11 flex flex-wrap justify-center">
-                    {articles.map((el, i) => {
-                        return <NewsItem mode={mode} key={i} title={el.title} des={el.description} image={el.urlToImage} url={el.url} />
-                    })}
-                </div>
+                    <div className="mt-24 md:ml-11 md:mr-11 flex flex-wrap justify-center">
+                        {articles.map((el, i) => {
+                            return <NewsItem mode={mode} key={i} title={el.title} des={el.description} image={el.urlToImage} url={el.url} />
+                        })}
+                    </div>
 
-            </InfiniteScroll>
-        </div>
+                </InfiniteScroll>
+            </div>}
+        </>
     )
 }
